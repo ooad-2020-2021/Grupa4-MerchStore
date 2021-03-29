@@ -23,6 +23,7 @@ Korisnik:
 Dizajner može odlučiti da dobija notifikaciju preko vanjskog uređaja (mobitel, e-mail) kada neko kupi njegovu garderobu ili kada dobije odobrenje od administratora. (u zavisnosti koje informacije popuni u korisničkom računu). Minimalna narudžba od strane dizajnera je 50 komada po vrsti garderobe koju želi prodavati. Ukoliko dizajner ne uspije prodati garderobu za 3 mjeseca, ostatak garderobe se dostavlja na njegovu adresu. Ukoliko neke vrste garderobe nestane u zalihama (bilo to u merch store-u dizajnera ili administratora), ta garderoba se automatski uklanja, a dizajner može odlučiti da ukloni garderobu prijevremeno nakon čega se preostala garderoba dostavlja na njegovu adresu.
 
 Funkcionalni zahtjevi aplikacije:
+- Omogućava administratoru da odlučuje koje tipove garderobe će korisnik moći dizajnirati;
 - Omogućava administratoru kontrolu nad svim računima registrovanih korisnika što podrazumijeva terminiranje računa i dobijanje informacije o ukupnom broju registrovanih korisnika te osnovne informacije o svakom korisniku (korisničko ime i datum keriranja);
 - Omogućava administratoru kontrolu nad svim merch store-ovima što podrazumijeva terminiranje store-a i dobijanje informacije o ukupnom broju registrovanih merch store-ova re osnovne informacije o svakom store-u (vlasnik, adresa vlasnika);
 - Prije dostave dizajnirane garderobe, administrator mora validirati dostavu;
