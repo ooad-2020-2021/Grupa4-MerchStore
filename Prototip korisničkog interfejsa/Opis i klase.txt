@@ -1,0 +1,7 @@
+Aplikacija se sastoji od Merch store-ova svih korisnika koji su dizajnirali garderobu koju zele da prodaju. Korisnik koji dizajnira garderobu, prvo odlucuje koju garderobu zeli dizajnirati, a nakon dizajniranja narucuje odredenu kolicinu (minimalno 50). Korisnik koji zeli kupiti dizajniranu garderobu pretrazuje Merch store-ove preko koda koji dobije od korisnika koji prodaje dizajniranu garderobu. 
+
+Klase:
+Korisnik <- Kupac, Dizajner, Administrator
+Garderoba <- GarderobaGornjiDio, GarderobaDonjiDio
+MerchStore
+Sistem
