@@ -10,12 +10,12 @@ namespace Merch_store.Models
     {
         [Key]
         [Required]
-        int ID { get; set; }
+        public int ID { get; set; }
         [Required]
-        string korisnickoIme { get; set; }
+        public string korisnickoIme { get; set; }
         [Required]
-        string Email { get; set; }
+        public string Email { get; set; }
         [Required]
-        string Password { get; set; }
+        public string Password { get; set; }
     }
 }

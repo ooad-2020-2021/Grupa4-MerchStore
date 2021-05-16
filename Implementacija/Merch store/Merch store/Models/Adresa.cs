@@ -7,9 +7,9 @@ namespace Merch_store.Models
 {
     public class Adresa
     {
-        string NazivUlice { get; set; }
-        string PostanskiBroj { get; set; }
-        string Grad { get; set; }
-        string NazivNarucioca { get; set; }
+        public string NazivUlice { get; set; }
+        public string PostanskiBroj { get; set; }
+        public string Grad { get; set; }
+        public string NazivNarucioca { get; set; }
     }
 }

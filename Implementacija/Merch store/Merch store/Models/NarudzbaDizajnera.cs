@@ -10,22 +10,22 @@ namespace Merch_store.Models
     {
         [Key]
         [Required]
-        int ID { get; set; }
-        string NazivGarderobe { get; set; }
-        string Boja { get; set; }
-        string Velicina { get; set; }
+        public int ID { get; set; }
+        public string NazivGarderobe { get; set; }
+        public string Boja { get; set; }
+        public string Velicina { get; set; }
         [Required]
-        int Kolicina { get; set; }
+        public int Kolicina { get; set; }
         [Required]
-        double Cijena { get; set; }
+        public double Cijena { get; set; }
         [EnumDataType(typeof(StatusNarudzbe))]
-        StatusNarudzbe StatusNarudzbe { get; set; }
+        public StatusNarudzbe StatusNarudzbe { get; set; }
         [EnumDataType(typeof(TipNarudzbe))]
-        TipNarudzbe TipNarudzbe { get; set; }
+        public TipNarudzbe TipNarudzbe { get; set; }
         [DataType(DataType.Date)]
-        DateTime DatumNarudzbe { get; set; }
+        public DateTime DatumNarudzbe { get; set; }
         [DataType(DataType.Date)]
-        DateTime PreostaloVrijeme { get; set; }
-        List<Tuple<int, int>> Pozicije = new List<Tuple<int, int>>();
+        public DateTime PreostaloVrijeme { get; set; }
+        public List<Tuple<int, int>> Pozicije = new List<Tuple<int, int>>();
     }
 }

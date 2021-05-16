@@ -9,14 +9,14 @@ namespace Merch_store.Models
 {
     public class Store
     {
-        Adresa Adresa { get; set; }
+        public Adresa Adresa { get; set; }
         [Key]
-        string Kod { get; set; }
+        public string Kod { get; set; }
         [NotMapped]
-        List<NarudzbaDizajnera> Narudzbe = new List<NarudzbaDizajnera>();
+        public List<NarudzbaDizajnera> Narudzbe = new List<NarudzbaDizajnera>();
         [NotMapped]
-        List<MobilniUredaj> MobilniUredaji = new List<MobilniUredaj>();
-        bool EmailNotifikacije { get; set; }
-        bool UredajNotifikacije { get; set; }
+        public List<MobilniUredaj> MobilniUredaji = new List<MobilniUredaj>();
+        public bool EmailNotifikacije { get; set; }
+        public bool UredajNotifikacije { get; set; }
     }
 }

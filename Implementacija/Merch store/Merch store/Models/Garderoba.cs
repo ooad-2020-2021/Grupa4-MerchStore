@@ -11,16 +11,16 @@ namespace Merch_store.Models
     {
         [Key]
         [Required]
-        int ID { get; set; }
-        string Naziv { get; set; }
+        public int ID { get; set; }
+        public string Naziv { get; set; }
         [NotMapped]
-        List<string> DostupneBoje = new List<string>();
+        public List<string> DostupneBoje = new List<string>();
         [NotMapped]
-        List<string> DostupneVelicine = new List<string>();
+        public List<string> DostupneVelicine = new List<string>();
         [Required]
-        double Cijena { get; set; }
+        public double Cijena { get; set; }
         [Required]
-        int Kolicina { get; set; }
+        public int Kolicina { get; set; }
         List<Tuple<int, int>> Pozicije = new List<Tuple<int, int>>();
     }
 }

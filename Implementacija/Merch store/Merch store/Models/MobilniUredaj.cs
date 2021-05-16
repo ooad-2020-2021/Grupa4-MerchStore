@@ -9,7 +9,7 @@ namespace Merch_store.Models
     public class MobilniUredaj
     {
         [Required]
-        string Broj { get; set; }
-        string NazivUredaja { get; set; }
+        public string Broj { get; set; }
+        public string NazivUredaja { get; set; }
     }
 }
