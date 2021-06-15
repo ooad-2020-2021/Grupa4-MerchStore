@@ -1,0 +1,76 @@
+﻿@model GlavniViewModel
+
+@{
+    ViewData["Title"] = "Pretraga";
+}
+
+<div class="text-center">
+    <form asp-action="Pretraga">
+        <input type="search" style="width:75%" name="Id"></input>
+        <input type="submit" value="Pretraga" />
+    </form>
+    <br />
+</div>
+
+<div style="display: flex; justify-content: space-around">
+    <div style="border: 1px solid black; width: 90%; height:300px">
+        <h3>Rezultati pretrage</h3>
+        @if (Model.artikli.Count() > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Naziv artikla
+                        </th>
+                        <th>
+                            Kolicina
+                        </th>
+                        <th>
+                            Cijena
+                        </th>
+                        <th>
+                            Velicina
+                        </th>
+                        <th>
+                            Boja
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.artikli)
+                    {
+                        if (item.StatusNarudzbe == 1)
+                        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NazivGarderobe)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kolicina)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cijena)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Velicina)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Boja)
+                        </td>
+                        <td>
+                            <a> Naruci </a>
+                        </td>
+                    </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        }
+        @if (Model.artikli.Count() == 0)
+         {
+            <h3>Store sa datim id-em ne postoji ili nema dostupnih artikala</h3>
+         }
+        </div>
+</div>

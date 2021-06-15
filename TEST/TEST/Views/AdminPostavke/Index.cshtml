@@ -1,0 +1,96 @@
+﻿@model AdminPostavkeModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-action="DodavanjeGarderobe">
+    <input type="submit" value="Dodaj novu garderobu" />
+</form>
+
+<h1>Korisnici</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.temp1.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temp1.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.korisnici) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<h1>Neobradene narudzbe</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Naziv korisnika
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temp2.NazivGarderobe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temp2.Kolicina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temp2.Cijena)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.nepotrvrdjeneNarudzbe)
+        {
+        <tr>
+            @foreach (var items2 in Model.korisnici)
+            {
+                if (items2.Id.Equals(item.korisnikID.ToString()))
+                {
+                    <td>
+                        @Html.Raw(items2.UserName)
+                    </td>
+                }
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.NazivGarderobe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolicina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cijena)
+            </td>
+            <td>
+                <form asp-action="Potvrdi">
+                    <input type="hidden" name="Id" value="@item.ID" />
+                    <input type="submit" value="Potvrdi" />
+                </form> 
+                <form asp-action="Odbij">
+                    <input type="hidden" name="Id" value="@item.ID" />
+                    <input type="submit" value="Odbij" />
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

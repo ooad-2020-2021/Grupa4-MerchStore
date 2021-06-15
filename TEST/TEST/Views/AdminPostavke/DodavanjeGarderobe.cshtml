@@ -1,0 +1,46 @@
+﻿@model AdminPostavkeModel
+
+@{
+    ViewData["Title"] = "Dizajniranje";
+}
+
+
+<h3>Dodavanje garderobe</h3>
+<form asp-action="DodavanjeGarderobe">
+    Broj boja    : <input type="search" style="width:20%" name="brojboja"></input>
+    <br />
+    Broj velicina: <input type="search" style="width:20%" name="brojvel"></input>
+    <input type="submit" value="Osvjezi" />
+</form>
+<br />
+<br />
+
+<form asp-action="OsvjeziDodavanje">
+    <div>Naziv: <input type="search" style="width:20%" name="naziv"></input></div>
+    <br />
+    <br />
+    <div>Cijena: <input type="search" style="width:20%" name="cijena"></input></div>
+    <br />
+    <br />
+    <div>Kolicina: <input type="search" style="width:20%" name="kolicina"></input></div>
+    <br />
+    <br />
+    @for (int i = 0, j = 1; i < Model.brojBoja; i++, j++)
+    {
+        <div>
+            Boja @j:
+            <input type="search" style="width:20%" name="a @i"></input>
+            <br />
+        </div>
+    }
+    <br />
+    @for (int i = 0, j = 1; i < Model.brojVelicina; i++, j++)
+    {
+        <div>
+            Velicina @j:
+            <input type="search" style="width:20%" name="b @i"></input>
+            <br />
+        </div>
+    }
+    <input type="submit" value="Potvrdi" />
+</form>

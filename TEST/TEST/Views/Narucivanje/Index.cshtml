@@ -1,0 +1,70 @@
+﻿@model NarucivanjeModel
+
+@{
+    ViewData["Title"] = "Dizajniranje";
+}
+
+<h1>Dostupna garderoba</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                @Html.DisplayNameFor(model => model.garderoba.ElementAt(0).Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.garderoba.ElementAt(0).DostupneBoje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.garderoba.ElementAt(0).DostupneVelicine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.garderoba.ElementAt(0).Cijena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.garderoba.ElementAt(0).Kolicina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@for (int i = 0; i < Model.garderoba.Count(); i++) {
+            <tr>
+                <form asp-action="NaruciGarderobu">
+                    <td>
+                        <input type="hidden" name="id @Model.garderoba[i].ID" value="@Model.garderoba[i].ID" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.garderoba[i].Naziv)
+                    </td>
+                    <td>
+                        <select name="boje" id="boje">
+                            @for (int j = 0; j < Model.dostupneBojeString[i].Count(); j++)
+                            {
+                                <option value="@Model.dostupneBojeString[i][j]">@Model.dostupneBojeString[i][j]</option>
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <select name="velicine" id="velicine">
+                            @for (int j = 0; j < Model.dostupneBojeString[i].Count(); j++)
+                            {
+                                <option value="@Model.dostupneVelicineString[i][j]">@Model.dostupneVelicineString[i][j]</option>
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="search" style="width:30%" name="cijena"></input> (@Html.DisplayFor(modelItem => Model.garderoba[i].Cijena) )
+                    </td>
+                    <td>
+                        <input type="search" style="width:30%" name="kolicina"></input> ( @Html.DisplayFor(modelItem => Model.garderoba[i].Kolicina) )
+                    </td>
+                    <td>
+                        <input type="submit" value="Naruci" />
+                    </td>
+                </form>
+            </tr>
+            }
+    </tbody>
+</table>

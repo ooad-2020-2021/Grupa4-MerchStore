@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,6 +12,8 @@ namespace Merch_store.Models
         [Key]
         [Required]
         public int ID { get; set; }
+        [ForeignKey("Korinisk")]
+        public int korisnikID { get; set; }
         public string NazivGarderobe { get; set; }
         public string Boja { get; set; }
         public string Velicina { get; set; }
@@ -18,14 +21,9 @@ namespace Merch_store.Models
         public int Kolicina { get; set; }
         [Required]
         public double Cijena { get; set; }
-        [EnumDataType(typeof(StatusNarudzbe))]
-        public StatusNarudzbe StatusNarudzbe { get; set; }
-        [EnumDataType(typeof(TipNarudzbe))]
-        public TipNarudzbe TipNarudzbe { get; set; }
         [DataType(DataType.Date)]
         public DateTime DatumNarudzbe { get; set; }
         [DataType(DataType.Date)]
         public DateTime PreostaloVrijeme { get; set; }
-        public List<Tuple<int, int>> Pozicije = new List<Tuple<int, int>>();
     }
 }

@@ -1,8 +1,88 @@
-﻿@{
+﻿@model GlavniViewModel 
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <input type="search" style="width:75%"></input> <button type="button" style="width:15%">Pretraga</button>
+    <br />
 </div>
+<br />
+<div style="display: flex; justify-content: space-around">
+    <div style="border: 1px solid black; width: 45%; height:300px">
+        <h3>Vas store</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Naziv artikla
+                    </th>
+                    <th>
+                        Kolicina
+                    </th>
+                    <th>
+                        Cijena
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.artikli)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NazivGarderobe)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kolicina)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cijena)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div style="border: 1px solid black; width: 45%; height:300px">
+        <h3>Obavijesti</h3>
+        <table class="table">
+            <tbody>
+                @foreach (var item in Model.obavijesti)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.sadrzaj)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+
+
+
+<div style="display: flex; justify-content: space-around">
+    <div style="border: 1px solid black; width: 90%; height:100px">
+        <h3>Nedavne prodaje</h3>
+        <table class="table">
+            <tbody>
+                @foreach (var item in Model.obavijestiNarucivanja)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.sadrzaj)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
